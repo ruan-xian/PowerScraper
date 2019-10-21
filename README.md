@@ -27,5 +27,45 @@ give credentials in the command line or in options.json. To give them in the com
 
 PowerScraper.exe \<username\> \<password\>
 
-All of these will run the same way.
+All 3 of these options will run the same way.
+Results are stored in a folder called "output", located in the folder where the .exe is stored.
 
+## Automation
+
+This program is kinda pointless if you don't set up an automatic task to run it, unless you just
+forget what your grades were very easily. So here's some instructions:
+
+### Windows
+
+Press the Windows button, search for "Task Scheduler" and open it.
+On the left sidebar, click "Task Scheduler Library".
+On the right sidebar, click "Create Basic Task".
+Give it a name and a description, and click "Next".
+Select "Daily", and click "Next".
+Choose the time you want to scrape - make sure it's between 6 and 10 PM!
+Choose "Start a Program".
+Click browse and choose the location where PowerScraper.exe is stored.
+If you did not put your username and password into options.json, put them into
+the arguments, with a single space separating them.
+Click through the rest, and you're done!
+To test out your task, right-click the task in the middle menu, and click run.
+To check if it worked, go to where PowerScraper.exe is stored. If successful, you
+should find your files in a folder called "output".
+
+### Mac
+
+get fucked
+
+## If you're on Git and therefore don't have an .exe
+
+I'm assuming you have python + pip, and you're on Windows, so:
+
+Go to the command line and run:
+
+pip install auto-py-to-exe
+auto-py-to-exe
+
+A window should open in your browser. In path to file, select PowerScraper.py.
+Under "Additional Files", add options.json, chromedriver.exe, and README.md.
+Under advanced, you can choose where the .exe gets outputted.
+Now you can convert, and use the program as normal.
