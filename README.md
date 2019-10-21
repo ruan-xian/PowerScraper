@@ -74,3 +74,8 @@ A window should open in your browser. In path to file, select PowerScraper.py.
 Under "Additional Files", add options.json, chromedriver.exe, and README.md.
 Under advanced, you can choose where the .exe gets outputted.
 Now you can convert, and use the program as normal.
+
+## Known Issues
+
+If you have an elective or other one-tri class, it will always be listed as Tri 1.
+I have no idea how to use a Mac. If you do, email me at ryaxu20@bergen.org.
