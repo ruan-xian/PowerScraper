@@ -22,9 +22,8 @@ configuration options for the app, including (but not limited to):
     
     Whether to get the html of the overview site or not (looks ugly, may or may not give more info)
 
-    
 To change an option, simply change the value after the colon. Note that if there are quotes, you
-*must* include them. Deleting an option will simply sit it to a default value.
+*must* include them. Deleting an option will simply set it to a default value.
 
 To run the app, just run PowerScraper.exe. If you specified a username and password in options.json,
 the app will run automatically. Otherwise, you must somehow supply your credentials. There are two choices:
