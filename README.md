@@ -13,10 +13,16 @@ of this time.
 
 Within the folder, you will find a file called options.json. This file contains all the
 configuration options for the app, including (but not limited to):
+    
     Username
+    
     Password
+    
     Whether to get individual assignments or not (significantly increases runtime)
+    
     Whether to get the html of the overview site or not (looks ugly, may or may not give more info)
+
+    
 To change an option, simply change the value after the colon. Note that if there are quotes, you
 *must* include them. Deleting an option will simply sit it to a default value.
 
