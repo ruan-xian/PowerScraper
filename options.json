@@ -1,5 +1,6 @@
 {
     "username" : "",
     "password" : "",
-    "get_individual_assignments" : false
+    "get_individual_assignments" : true,
+    "get_old_html": false
 }
