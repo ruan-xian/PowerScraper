@@ -1,6 +1,6 @@
-# PowerScraper #
+# PowerScraper
 
-##About##
+## About
 
 The purpose of this project is to set up an automatable task to download grades from PowerSchool.
 Following the district choice to close access to PowerSchool outside of 6-10 PM, many have reported
@@ -9,7 +9,7 @@ that I did not remember to check a specific class. This will **NOT** allow you t
 grades outside of 6-10 like before, but it **will** let you see your grades *from* 6-10 outside
 of this time.
 
-##Usage##
+## Usage
 
 Within the folder, you will find a file called options.json. This file contains all the
 configuration options for the app, including (but not limited to):
