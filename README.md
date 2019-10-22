@@ -2,7 +2,8 @@
 
 ## Latest Stable Build
 
-You can download the Windows project here - save everything in the folder.
+You can download the Windows project [here](https://drive.google.com/open?id=16UMbQoXHwigCkT86fDDq_zKD8AX91jkv) -
+save everything in the folder.
 
 ## About
 
@@ -106,3 +107,4 @@ I'm trying to hide them, though.
 ## Concerns
 
 If you're worried about whether I'm stealing your login info or your grades, you can look at the code at 
+[https://github.com/ruan-xian/PowerScraper]. You can then use the instructions above to compile it yourself.
