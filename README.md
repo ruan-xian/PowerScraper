@@ -1,5 +1,9 @@
 # PowerScraper
 
+## Latest Stable Build
+
+You can download the Windows project here - save everything in the folder.
+
 ## About
 
 The purpose of this project is to set up an automatable task to download grades from PowerSchool.
@@ -33,7 +37,9 @@ give credentials in the command line or in options.json. To give them in the com
 PowerScraper.exe \<username\> \<password\>
 
 All 3 of these options will run the same way.
+
 **Results are stored in a folder called "output", located in the folder where the .exe is stored.**
+Logs are stored in a file called "ps.log".
 
 ## Automation
 
@@ -96,3 +102,7 @@ always be behind Windows, since you have to make Mac apps on a Mac.
 
 Currently, when you run the app, a bunch of error messages and stuff pop up - this is normal.
 I'm trying to hide them, though.
+
+## Concerns
+
+If you're worried about whether I'm stealing your login info or your grades, you can look at the code at 

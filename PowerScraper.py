@@ -2,9 +2,12 @@ from time import sleep
 from bs4 import BeautifulSoup
 import os,sys,json
 import WebHandler
+import logging
 
 original_directory = os.getcwd()
-os.chdir(os.path.dirname(sys.argv[0]))
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+logging.basicConfig(filename='ps.log',filemode='a',format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
 
 options_file = open('options.json','r')
 options_json = json.load(options_file)
@@ -15,12 +18,15 @@ available_args = (
     'username',
     'password',
     'get_individual_assignments',
-    'get_old_html')
+    'get_old_html',
+    'font'
+    )
 default_values = {
     'username':'',
     'password':'',
     'get_individual_assignments':True,
-    'get_old_html':False
+    'get_old_html':False,
+    'font':'Cambria'
     }
 options = {}
 for arg in available_args:
@@ -34,7 +40,8 @@ elif options['username'] == '':
     options['username'] = input("Enter username\n>")
     options['password'] = input("Enter password (this is plaintext so be careful)\n>")
 
+logging.info("Starting scrape for user {}".format(options['username']))
 succ = WebHandler.getPowerSchool(options)
 os.chdir(original_directory)
-print("Success!" if succ == 0 else "Failed")
+logging.info("Success!" if succ == 0 else "Failed")
 sys.exit()
