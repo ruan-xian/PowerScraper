@@ -37,8 +37,8 @@ if len(sys.argv) == 3:
     options['username'] = sys.argv[1]
     options['password'] = sys.argv[2]
 elif options['username'] == '':
-    options['username'] = input("Enter username\n>")
-    options['password'] = input("Enter password (this is plaintext so be careful)\n>")
+    logging.error('Login credentials are required.')
+    sys.exit()
 
 logging.info("Starting scrape for user {}".format(options['username']))
 succ = WebHandler.getPowerSchool(options)

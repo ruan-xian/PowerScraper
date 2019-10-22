@@ -32,12 +32,14 @@ To change an option, simply change the value after the colon. Note that if there
 
 To run the app, just run PowerScraper.exe. If you specified a username and password in options.json,
 the app will run automatically. Otherwise, you must somehow supply your credentials. There are two choices:
-command line arguments and manual typing when prompted. If you wish to automate the app, you must either 
+command line arguments and manual typing when prompted. 
+**As of October 22nd, manual typing is no longer supported.**
+If you wish to automate the app, you must either 
 give credentials in the command line or in options.json. To give them in the command line:
 
 PowerScraper.exe \<username\> \<password\>
 
-All 3 of these options will run the same way.
+Both of these options will run the same way.
 
 **Results are stored in a folder called "output", located in the folder where the .exe is stored.**
 Logs are stored in a file called "ps.log".
