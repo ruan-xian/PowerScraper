@@ -58,7 +58,7 @@ def getPowerSchool(options):
             gen = link.parent.parent.stripped_strings # if it ain't broke don't fix it
             next(gen)
             s = next(gen)
-            while s in possible_statuses:
+            while s in possible_statuses: # clear out the attendance stats. May implement some attendance tracking later.
                 s = next(gen)
             if s != last_class:
                 ct = 1
@@ -72,14 +72,16 @@ def getPowerSchool(options):
                 continue
             if (link.string is None): # this means there is a grade for the tri
                 assignments_retrieved = -1
-                if (options['get_individual_assignments']):
-                    assignments_retrieved = handle_class_page(browser,link.get('href'),last_class+" T"+str(ct))
                 grades = link.stripped_strings
+                letter_grade = next(grades)
+                number_grade = next(grades)
+                if (options['get_individual_assignments']):
+                    assignments_retrieved = handle_class_page(browser,link.get('href'),last_class+" T"+str(ct),number_grade)
                 if assignments_retrieved == 0:
                     f.write('<a href="')
                     f.write(last_class+" T"+str(ct)+'.html')
                     f.write('">')
-                f.write("  T" + str(ct) + "\t" + next(grades) + "\t" + next(grades) + "\n")
+                f.write("  T" + str(ct) + " " + number_grade + " " + letter_grade + "\n")
                 if assignments_retrieved == 0:
                     f.write('</a>')
     f.close()
@@ -88,7 +90,7 @@ def getPowerSchool(options):
     browser.quit()
     return 0
 
-def handle_class_page(browser,link,class_name):
+def handle_class_page(browser,link,class_name,average=None):
     browser.get('https://ps01.bergen.org/guardian/'+link)
     retry_count = 0
     got_grades_successfully = False
@@ -118,6 +120,9 @@ def handle_class_page(browser,link,class_name):
     f.write('<h1>')
     f.write(class_name +"\n")
     f.write('</h1>')
+    f.write('<h2>')
+    f.write(average +"\n")
+    f.write('</h2>')
 
     f.write('<h3>')
     f.write(last_updated+"\n")

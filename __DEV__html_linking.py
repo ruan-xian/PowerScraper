@@ -1,0 +1,5 @@
+f = open("test_link.html",'w+')
+f.write('<a href="')
+f.write('class_page.html')
+f.write('">Link Text</a>')
+f.close()

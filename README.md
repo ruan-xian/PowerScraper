@@ -33,7 +33,7 @@ give credentials in the command line or in options.json. To give them in the com
 PowerScraper.exe \<username\> \<password\>
 
 All 3 of these options will run the same way.
-Results are stored in a folder called "output", located in the folder where the .exe is stored.
+**Results are stored in a folder called "output", located in the folder where the .exe is stored.**
 
 ## Automation
 
@@ -42,24 +42,36 @@ forget what your grades were very easily. So here's some instructions:
 
 ### Windows
 
-Press the Windows button, search for "Task Scheduler" and open it.
-On the left sidebar, click "Task Scheduler Library".
-On the right sidebar, click "Create Basic Task".
-Give it a name and a description, and click "Next".
-Select "Daily", and click "Next".
-Choose the time you want to scrape - make sure it's between 6 and 10 PM!
-Choose "Start a Program".
-Click browse and choose the location where PowerScraper.exe is stored.
+1. Press the Windows button, search for "Task Scheduler" and open it.
+
+2. On the left sidebar, click "Task Scheduler Library".
+
+3. On the right sidebar, click "Create Basic Task".
+
+4. Give it a name and a description, and click "Next".
+
+5. Select "Daily", and click "Next".
+
+6. Choose the time you want to scrape - make sure it's between 6 and 10 PM!
+
+7. Choose "Start a Program".
+
+8. Click browse and choose the location where PowerScraper.exe is stored.
 If you did not put your username and password into options.json, put them into
 the arguments, with a single space separating them.
-Click through the rest, and you're done!
+
+9. Click through the rest, and you're done!
 To test out your task, right-click the task in the middle menu, and click run.
-To check if it worked, go to where PowerScraper.exe is stored. If successful, you
-should find your files in a folder called "output".
+To check if it worked, go to where PowerScraper.exe is stored.
+**If successful, you should find your files in a folder called "output".**
 
 ### Mac
 
 get fucked
+
+### Linux
+
+If you use linux you're smart enough to do this yourself
 
 ## If you're on Git and therefore don't have an .exe
 
@@ -78,4 +90,9 @@ Now you can convert, and use the program as normal.
 ## Known Issues
 
 If you have an elective or other one-tri class, it will always be listed as Tri 1.
-I have no idea how to use a Mac. If you do, email me at ryaxu20@bergen.org.
+
+I am currently trying to get Mac support - if I do, be aware that Mac releases will
+always be behind Windows, since you have to make Mac apps on a Mac.
+
+Currently, when you run the app, a bunch of error messages and stuff pop up - this is normal.
+I'm trying to hide them, though.
