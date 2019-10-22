@@ -7,6 +7,6 @@
     "get_individual_assignments_description" : "Whether to get individual class summary pages or not. Note that doing so can increase run time to over 30 seconds. Defaults to true.",
     "get_old_html" : false,
     "get_old_html_desc" : "Whether to get the html of the overview page or not. It looks ugly, but it might give more information. Defaults to false.",
-    "font" : "Comic Sans MS",
+    "font" : "Cambria",
     "font_desc" : "The font for the outputted files."
 }

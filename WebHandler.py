@@ -47,7 +47,9 @@ def getPowerSchool(options):
         f.close()
 
     f = open("./output/CSS/main.css","w+")
-    f.write("body { font-family: {} }".format(options['font']))
+    f.write("body { font-family: ")
+    f.write(options['font'])
+    f.write(" }")
     f.close()
 
     soup = BeautifulSoup(content,'html.parser')
