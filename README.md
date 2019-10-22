@@ -107,4 +107,4 @@ I'm trying to hide them, though.
 ## Concerns
 
 If you're worried about whether I'm stealing your login info or your grades, you can look at the code at 
-[https://github.com/ruan-xian/PowerScraper]. You can then use the instructions above to compile it yourself.
+https://github.com/ruan-xian/PowerScraper. You can then use the instructions above to compile it yourself.
