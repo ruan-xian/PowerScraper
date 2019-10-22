@@ -5,6 +5,14 @@
 You can download the Windows project [here](https://drive.google.com/open?id=16UMbQoXHwigCkT86fDDq_zKD8AX91jkv) -
 save everything in the folder.
 
+Last release:
+
+### October 22nd, 2019
+
+- Made running completely silent
+- Added logging
+- Added font options
+
 ## About
 
 The purpose of this project is to set up an automatable task to download grades from PowerSchool.
@@ -102,9 +110,6 @@ If you have an elective or other one-tri class, it will always be listed as Tri 
 
 I am currently trying to get Mac support - if I do, be aware that Mac releases will
 always be behind Windows, since you have to make Mac apps on a Mac.
-
-Currently, when you run the app, a bunch of error messages and stuff pop up - this is normal.
-I'm trying to hide them, though.
 
 ## Concerns
 
