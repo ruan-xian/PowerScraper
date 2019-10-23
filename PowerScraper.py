@@ -9,28 +9,26 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 logging.basicConfig(filename='ps.log',filemode='a',format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
 
-options_file = open('options.json','r')
-options_json = json.load(options_file)
-options_file.close()
+try:
+    options_file = open('options.json','r')
+    options_json = json.load(options_file)
+    options_file.close()
+except:
+    logging.error("Failed to read options.json")
+    sys.exit()
 
 ##################### LOAD OPTIONS ########################
-available_args = (
-    'username',
-    'password',
-    'get_individual_assignments',
-    'get_old_html',
-    'font'
-    )
-default_values = {
+values = {
     'username':'',
     'password':'',
     'get_individual_assignments':True,
     'get_old_html':False,
-    'font':'Cambria'
+    'font':'Cambria',
+    'right_indent':"50%"
     }
 options = {}
-for arg in available_args:
-    options[arg] = options_json.get(arg,default_values[arg])
+for arg,default_value in values.items():
+    options[arg] = options_json.get(arg,default_value)
 ###########################################################
 
 if len(sys.argv) == 3:

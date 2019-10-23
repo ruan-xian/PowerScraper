@@ -5,6 +5,7 @@ from time import sleep
 import os
 import lxml
 import logging
+import re
 
 def getPowerSchool(options):
     #logging.basicConfig(filename='ps.log',filemode='a',format='%(asctime)s - %(message)s',level=logging.INFO)
@@ -46,11 +47,7 @@ def getPowerSchool(options):
         f.write(content)
         f.close()
 
-    f = open("./output/CSS/main.css","w+")
-    f.write("body { font-family: ")
-    f.write(options['font'])
-    f.write(" }")
-    f.close()
+    generateCSS(options)
 
     soup = BeautifulSoup(content,'html.parser')
     possible_statuses = ('.','-','AU','AE','TE','TU','T','HU','HE','AR','ER',
@@ -62,21 +59,18 @@ def getPowerSchool(options):
 
     f.write("<body>")
 
-    ct = 0
     last_class = ""
     f.write("<h1>")
     f.write("Overview for " + options['username'] + "\n")
     f.write("</h1>")
     for link in soup.find_all('a'):
         if link.get('href').startswith("scores.html"):
-            ct += 1
             gen = link.parent.parent.stripped_strings # if it ain't broke don't fix it
             next(gen)
             s = next(gen)
             while s in possible_statuses: # clear out the attendance stats. May implement some attendance tracking later.
                 s = next(gen)
             if s != last_class:
-                ct = 1
                 last_class = s
                 if s.startswith('~Lunch') or s.startswith('~Homeroom'):
                     continue
@@ -90,15 +84,20 @@ def getPowerSchool(options):
                 grades = link.stripped_strings
                 letter_grade = next(grades)
                 number_grade = next(grades)
+                tri = re.search(r'fg=T\d',link.get('href')).group(0)[3:]
                 if (options['get_individual_assignments']):
-                    assignments_retrieved = handle_class_page(browser,link.get('href'),last_class+" T"+str(ct),number_grade)
+                    assignments_retrieved = handleClassPage(browser,link.get('href'),last_class+" "+tri,number_grade)
                 if assignments_retrieved == 0:
                     f.write('<a href="')
-                    f.write(last_class+" T"+str(ct)+'.html')
-                    f.write('">')
-                f.write("  T" + str(ct) + " " + number_grade + " " + letter_grade + "\n")
+                    f.write(last_class+" "+tri +'.html')
+                    f.write(r'" class="tab">')
+                else:
+                    f.write(r'<p class="tab">')
+                f.write("  " + tri + " " + number_grade + " " + letter_grade + "\n")
                 if assignments_retrieved == 0:
                     f.write('</a>')
+                else:
+                    f.write(r'</p>')
                 f.write('<br>')
     f.write("</body>")
     f.close()
@@ -107,7 +106,7 @@ def getPowerSchool(options):
     browser.quit()
     return 0
 
-def handle_class_page(browser,link,class_name,average=None):
+def handleClassPage(browser,link,class_name,average=None):
     browser.get('https://ps01.bergen.org/guardian/'+link)
     retry_count = 0
     got_grades_successfully = False
@@ -143,19 +142,37 @@ def handle_class_page(browser,link,class_name,average=None):
     f.write(class_name +"\n")
     f.write('</h1>')
     f.write('<h2>')
-    f.write(average +"\n")
+    f.write("Average: " + average +"\n")
     f.write('</h2>')
 
     f.write('<h3>')
     f.write(last_updated+"\n")
     f.write('</h3>')
+
+    f.write('<a href="overview.html">Back to overview</a>')
+
     for assignment,grade in total_stats:
-        f.write('<div>')
-        f.write(assignment.string.strip() + " " + grade.string.strip() + "\n")
-        f.write('</div>')
-        f.write('<br>')
+        f.write(r'<p style="text-align:left">')
+        f.write(assignment.string.strip())
+        f.write(r'<span style="float:right" class="rtab">')
+        f.write(grade.string.strip())
+        f.write('</span>')
+        f.write('</p>')
+        f.write('<hr class="rtab">')
+
     f.write('<a href="overview.html">Back to overview</a>')
     f.write("</body>")
 
     f.close()
     return 0
+
+def generateCSS(options):
+    f = open("./output/CSS/main.css","w+")
+
+    f.write("body { font-family: " + options['font'] + " }\n")
+
+    f.write(r".tab { margin-left: 2%; }")
+    f.write(r".rtab { margin-right: " + options['right_indent'] + r"; }")
+
+    f.close()
+    return

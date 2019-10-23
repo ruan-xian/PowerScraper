@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
+import re
 
-source = open('./output/PowerschoolScraper/PowerSchool/home.html','r')
+source = open('soup.html','r')
 soup = BeautifulSoup(source,'html.parser')
 source.close()
 
@@ -28,3 +29,6 @@ for link in soup.find_all('a'):
         if (link.string is None):
             grades = link.stripped_strings
             print("  T" + str(ct) + "\t" + next(grades) + "\t" + next(grades))
+        else:
+            tri = re.search(r'fg=T\d',link.get('href')).group(0)
+            print(tri[3:])

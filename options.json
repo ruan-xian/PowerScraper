@@ -8,5 +8,7 @@
     "get_old_html" : false,
     "get_old_html_desc" : "Whether to get the html of the overview page or not. It looks ugly, but it might give more information. Defaults to false.",
     "font" : "Cambria",
-    "font_desc" : "The font for the outputted files."
+    "font_desc" : "The font for the outputted files.",
+    "right_indent" : "50%",
+    "right_indent_desc" : "How far into the page to put the grades for individual assignments."
 }
