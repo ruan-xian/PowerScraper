@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 import os
-import lxml
 import logging
 import re
 
