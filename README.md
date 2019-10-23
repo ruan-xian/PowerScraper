@@ -113,8 +113,10 @@ https://github.com/ruan-xian/PowerScraper. You can then use the instructions abo
 ### October 22nd, 2019
 
 - Made running completely silent
+    - As a consequence, you can no longer login while the app is already running
 - Added logging
 - Added font options
+- Beautified pages
 
 ### Before
 
