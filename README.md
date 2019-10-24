@@ -122,6 +122,13 @@ I don't have a Mac.
 If you're worried about whether I'm stealing your login info or your grades, you can look at the code at 
 https://github.com/ruan-xian/PowerScraper. You can then use the instructions above to compile it yourself.
 
+If you wish to automate the app, you will have to store your password somewhere in some way, whether it's in options.json or in the 
+Task Scheduler. Know that any time you save your password in plaintext, you are decreasing your security.
+
+## Contact
+
+For questions and concerns, email me at ryan-xu@live.com or DM me on Instagram @ruan__xian. Update announcements will be on Instagram.
+
 ## Version history
 
 ### October 24th, 2019
