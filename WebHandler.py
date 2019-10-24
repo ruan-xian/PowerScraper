@@ -168,9 +168,13 @@ def handleClassPage(browser,link,class_name,average=None):
 def generateCSS(options):
     f = open("./output/CSS/main.css","w+")
 
-    f.write("body { font-family: " + options['font'] + " }\n")
+    f.write("body {\n")
 
-    f.write(r".tab { margin-left: 2%; }")
+    f.write("font-family: {};\n".format(options['font']))
+
+    f.write("}\n")
+
+    f.write(r".tab { margin-left: 2em; }")
     f.write(r".rtab { margin-right: " + options['right_indent'] + r"; }")
 
     f.close()
