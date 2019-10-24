@@ -18,6 +18,14 @@ of this time.
 
 Currently, this app is only available for Windows. It might work on Linux, but it also might not.
 
+## Quickstart
+
+If you really don't care about options and just want to get started:
+
+1. Download the latest build from the link above.
+2. Run EasyAutomator and follow the prompts.
+3. You're done! Output will be in the folder "output", in the same directory. Logs are in ps.log.
+
 ## Usage
 
 Within the folder, you will find a file called options.json. This file contains all the

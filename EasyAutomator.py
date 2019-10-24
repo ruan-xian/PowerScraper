@@ -76,4 +76,5 @@ if run_test.startswith('y'):
     print("Running task")
     task = rootFolder.GetTask(task_id)
     runningTask = task.Run("")
-    print("Task finished. Check your install folder for output files/logs.")
+    print("Task started. Wait about a minute, then check your install folder for output files/logs.")
+    input("Press [ENTER] to close this window...")
