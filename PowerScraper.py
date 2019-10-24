@@ -3,10 +3,15 @@ import WebHandler
 import logging
 
 original_directory = os.getcwd()
-try:
-    os.chdir(os.path.dirname(sys.argv[0]))
-except:
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+if getattr(sys, 'frozen', False):
+    os.chdir(os.path.dirname(os.path.realpath(sys.executable)))
+else:
+    try:
+        os.chdir(os.path.dirname(os.path.realpath(sys.argv[0])))
+    except:
+        os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
 logging.basicConfig(filename='./ps.log',filemode='a',format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
 
 try:

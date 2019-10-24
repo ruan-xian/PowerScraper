@@ -92,13 +92,15 @@ pip install auto-py-to-exe
 auto-py-to-exe
 
 A window should open in your browser. In path to file, select PowerScraper.py.
-Under "Additional Files", add options.json, chromedriver.exe, and README.md.
+
+If you want the easy way: Under "Additional Files", add options.json, chromedriver.exe, and README.md.
+
+If you want the hard way, but with cleaner output: Choose "One file", and don't add any additional files. After converting to .exe, copy over the three files listed above into the new folder.
+
 Under advanced, you can choose where the .exe gets outputted.
 Now you can convert, and use the program as normal.
 
 ## Known Issues
-
-If you have an elective or other one-tri class, it will always be listed as Tri 1.
 
 I am currently trying to get Mac support - if I do, be aware that Mac releases will
 always be behind Windows, since you have to make Mac apps on a Mac.
@@ -117,6 +119,7 @@ https://github.com/ruan-xian/PowerScraper. You can then use the instructions abo
 - Added logging
 - Added font options
 - Beautified pages
+- Fixed Tri 1 issue
 
 ### Before
 
