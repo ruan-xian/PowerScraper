@@ -34,7 +34,7 @@ configuration options for the app, including (but not limited to):
 To change an option, simply change the value after the colon. Note that if there are quotes, you
 *must* include them. Deleting an option will simply set it to a default value.
 
-To run the app, just run PowerScraper.exe. If you specified a username and password in options.json,
+To run the app, just run PowerScraper.exe by double-clicking it. If you specified a username and password in options.json,
 the app will run automatically. Otherwise, you must somehow supply your credentials. There are two choices:
 command line arguments and manual typing when prompted. 
 **As of October 22nd, manual typing is no longer supported.**
@@ -58,7 +58,7 @@ forget what your grades were very easily. So here's some instructions:
 #### New on October 24th, 2019
 
 There is now a new application/.exe file called EasyAutomator.exe that comes in the same install folder.
-Just run it and follow the prompts, and it'll set up an automatic PowerScraper task!
+Just run it by double-clicking and follow the prompts, and it'll set up an automatic PowerScraper task!
 
 #### Old way
 
