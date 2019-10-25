@@ -72,7 +72,7 @@ settings.Hidden = task_hidden
 result = rootFolder.RegisterTaskDefinition(task_id, taskDef, TASK_CREATE_OR_UPDATE, "", "", RUNFLAGSENUM[run_flags] ) #username, password
 run_test = input("Success! Would you like to run the task once to test it? [Y/N]\n>")
 #run the task once
-if run_test.startswith('y'):
+if run_test.lower().startswith('y'):
     print("Running task")
     task = rootFolder.GetTask(task_id)
     runningTask = task.Run("")

@@ -1,3 +1,5 @@
 output/*
 ps.log
 *.bat
+client_secrets.json
+UploadToDrive.py
