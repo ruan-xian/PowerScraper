@@ -24,7 +24,8 @@ If you really don't care about options and just want to get started:
 
 1. Download the latest build from the link above.
 2. Run EasyAutomator and follow the prompts.
-3. You're done! Output will be in the folder "output", in the same directory. Logs are in ps.log.
+3. You're done! Output will be in the folder "output", in the same directory. Logs are in ps.log. Don't expect anything to happen right away - give it til 8:30/9:30. If you *do* want to see instant results, though, say yes when prompted to try while running EasyAutomator. Don't expect anything big to happen if it's not 6-10...
+4. If something goes wrong and you don't get a result within 2 minutes, check to see if there's an error message in ps.log.
 
 ## Usage
 
