@@ -7,6 +7,10 @@ By Ryan Xu, AAST 2020
 You can download the Windows project [here](https://drive.google.com/open?id=16UMbQoXHwigCkT86fDDq_zKD8AX91jkv) -
 save everything in the folder. Scroll to the bottom of the readme for version history.
 
+By the way, if someone would be willing to work on getting a Mac port, email me at ryan-xu@live.com.
+
+Thanks!
+
 ## About
 
 The purpose of this project is to set up an automatable task to download grades from PowerSchool.
@@ -124,7 +128,7 @@ To include the new automator, separately compile EasyAutomator.py.
 
 ## Known Issues
 
-I don't have a Mac.
+I don't have a Mac. If you have a Mac and know Python, email me.
 
 ## Concerns
 
