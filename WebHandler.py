@@ -18,7 +18,7 @@ def getPowerSchool(options):
     browser = webdriver.Chrome(executable_path='./chromedriver.exe', chrome_options=chrome_option)
 
     try:
-        browser.get("https://ps01.bergen.org/public/")
+        browser.get("https://ps001.bergen.org/public/")
         browser.find_element_by_id('fieldAccount').send_keys(options['username'])
         browser.find_element_by_id('fieldPassword').send_keys(options['password'])
         browser.find_element_by_id('btn-enter').click()
@@ -83,7 +83,10 @@ def getPowerSchool(options):
                 grades = link.stripped_strings
                 letter_grade = next(grades)
                 number_grade = next(grades)
-                tri = re.search(r'fg=T\d',link.get('href')).group(0)[3:]
+                tri = re.search(r'fg=T\d',link.get('href'))
+                if tri is None: 
+                    continue
+                tri = tri.group(0)[3:]
                 if (options['get_individual_assignments']):
                     assignments_retrieved = handleClassPage(browser,link.get('href'),last_class+" "+tri,number_grade)
                 if assignments_retrieved == 0:
@@ -106,7 +109,7 @@ def getPowerSchool(options):
     return 0
 
 def handleClassPage(browser,link,class_name,average=None):
-    browser.get('https://ps01.bergen.org/guardian/'+link)
+    browser.get('https://ps001.bergen.org/guardian/'+link)
     retry_count = 0
     got_grades_successfully = False
     while (True):
@@ -125,7 +128,7 @@ def handleClassPage(browser,link,class_name,average=None):
     table = BeautifulSoup(str(browser.page_source),'html.parser').select('#scoreTable')[0]
     assignments = table.find_all(lambda tag : tag.name == 'span' and tag.get('class') == ['ng-binding'])
     grades = table.find_all(lambda tag : tag.name == 'span' and tag.get('class') == ['ng-binding','ng-scope'])
-    last_updated = grades[len(grades)-1].string.strip()
+    last_updated = grades[len(grades)-1].text.strip()
     grades = grades[:-1]
 
     total_stats = zip(assignments,grades)
